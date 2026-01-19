@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ice Scramble Available</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="notify" class="notify"></div>
+
+<div class="container">
+
+  <div class="card">
+    <div class="title">Ice Scramble Available</div>
+
+    <h2>Place Order</h2>
+    <label>Customer Name</label>
+    <input id="name" placeholder="Customer name" />
+
+    <label>Flavor (12oz – ₱50)</label>
+    <select id="flavor">
+      <option>Ube</option>
+      <option>Chocolate</option>
+    </select>
+
+    <label>Quantity</label>
+    <input id="qty" type="number" min="1" value="1" />
+
+    <button class="btn-main" id="placeOrderBtn">Place Order</button>
+
+    <div class="summary" id="summary">Total Sales Today: ₱0</div>
+    <button class="btn-export" id="exportBtn">Export Daily Sales (PNG)</button>
+    <div class="data" id="data">Orders Count: 0 | Total Quantity: 0</div>
+  </div>
+
+  <div class="card">
+    <h2>Orders</h2>
+    <div id="orders" class="orders"></div>
+    <div id="empty" class="empty">No orders yet</div>
+  </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="client.js" type="module"></script>
+
+</body>
+</html>
